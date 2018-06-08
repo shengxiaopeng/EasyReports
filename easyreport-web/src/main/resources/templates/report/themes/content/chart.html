@@ -2,12 +2,14 @@
     <form id="chart-report-form" method="post">
         <table class="designer-table" style="width: 100%;padding: 6px;">
             <tr>
-                <td style="text-align: left;" th:utext="${formHtmlText}">&nbsp;&nbsp;
+                <td style="text-align: left;" >
+                    <span th:utext="${formHtmlText}"></span>
+                    &nbsp;&nbsp;
                     <a id="btn-chart-generate" href="#" class="easyui-linkbutton"
                        data-options="iconCls:'icon-ok'">生成</a>
-                    <input id="chart-report-id" type="hidden" name="id" th:value="${id}"/>
-                    <input id="chart-report-name" type="hidden" name="name" th:value="${name}"/>
-                    <input id="chart-report-uid" type="hidden" name="uid" th:value="${uid}"/>
+                    <input id="chart-report-id" type="input" name="id" th:value="${id}"/>
+                    <input id="chart-report-name" type="input" name="name" th:value="${name}"/>
+                    <input id="chart-report-uid" type="input" name="uid" th:value="${uid}"/>
                 </td>
             </tr>
             <tr id="chart-report-columns">
@@ -15,7 +17,8 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <label style="width: 120px;">选择维度:</label><span th:utext="${nonStatColumHtmlText}">&nbsp;</span>
+                    <label style="width: 120px;">选择维度:</label>
+                    <span th:utext="${nonStatColumHtmlText}">&nbsp;</span>
                     横轴维度：<select id="xAxisDim"></select>&nbsp;
                     顺序：<select id="sortType">
                     <option value="asc">升序</option>

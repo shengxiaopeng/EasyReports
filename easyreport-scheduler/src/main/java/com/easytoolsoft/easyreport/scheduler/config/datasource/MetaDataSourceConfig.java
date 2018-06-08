@@ -23,13 +23,13 @@ import org.springframework.transaction.support.TransactionTemplate;
 @Configuration
 @MapperScan(basePackages = MetaDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "metaSqlSessionFactory")
 public class MetaDataSourceConfig extends AbstractDataSourceConfig {
-    static final String PACKAGE = "com.easytoolsoft.easyreport.report.data";
+    static final String PACKAGE = "com.easytoolsoft.easyreport.meta.data";
     static final String MAPPER_LOCATION = "classpath*:mybatis/mapper/report/*.xml";
 
-    @Value("${easytoolsoft.easyreport.report.datasource.type}")
+    @Value("${easytoolsoft.easyreport.meta.datasource.type}")
     private Class<? extends DataSource> dataSourceType;
 
-    @ConfigurationProperties(prefix = "easytoolsoft.easyreport.report.datasource")
+    @ConfigurationProperties(prefix = "easytoolsoft.easyreport.meta.datasource")
     @Bean(name = "metaDataSource")
     public DataSource dataSource() {
         return DataSourceBuilder.create()

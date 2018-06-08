@@ -375,7 +375,7 @@ var ChartReportMVC = {
                 });
             } else {
                 values = [];
-                values.push($(id).val());
+                values.push($(id).val()||$(id).combobox('getValue'));
             }
 
             values = values.sort();

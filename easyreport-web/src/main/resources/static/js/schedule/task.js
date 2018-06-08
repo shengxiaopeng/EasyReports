@@ -13,7 +13,7 @@ var ScheduleTask = {
 
 var TaskCommon = {
     baseUrl: EasyReport.ctxPath + '/rest/schedule/task/',
-    baseReportUrl: EasyReport.ctxPath + '/rest/schedule/designer/',
+    baseReportUrl: EasyReport.ctxPath + '/rest/report/designer/',
     baseIconUrl: EasyReport.ctxPath + '/custom/easyui/themes/icons/'
 };
 
@@ -179,13 +179,13 @@ var TaskMVC = {
                 }
             });
 
-            $('#cronExprDiv').cron({
+            /*$('#cronExprDiv').cron({
                 initial: "42 3 1 * *",
                 onChange: function () {
                     $('#cronExpr').textbox('setValue', $(this).cron("value"));
                 },
                 useGentleSelect: true
-            });
+            });*/
         },
         bindEvent: function () {
             $('#btn-search').bind('click', TaskMVC.Controller.find);
